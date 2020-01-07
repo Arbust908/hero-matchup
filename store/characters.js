@@ -1,0 +1,72 @@
+export const state = () => ({
+  all: [
+    {
+      id: 0,
+      name: 'Li',
+      img: 'li.png',
+      fullName: 'Li Faierlif, Monk of the Heavens',
+      slug: 'li',
+      str: 14,
+      dex: 20,
+      con: 20,
+      wis: 18,
+      int: 12,
+      cha: 8,
+      luk: 99,
+      level: 10,
+      items: [],
+      attacks: []
+    },
+    {
+      id: 1,
+      name: 'Grimund',
+      img: 'grimund.png',
+      fullName: 'Grimund Bronzeheart',
+      slug: 'grimund',
+      str: 16,
+      dex: 12,
+      con: 14,
+      wis: 12,
+      int: 10,
+      cha: 14,
+      luk: 20,
+      level: 10,
+      items: [],
+      attacks: []
+    },
+    {
+      id: 2,
+      name: 'Azabaz',
+      img: 'azabaz.png',
+      fullName: 'Azabaz Dragons´ Bane ',
+      slug: 'azabaz',
+      str: 20,
+      dex: 20,
+      con: 20,
+      wis: 20,
+      int: 20,
+      cha: 20,
+      luk: 99,
+      level: 10,
+      items: [],
+      attacks: []
+    },
+    {
+      id: 3,
+      name: 'Kinowe',
+      img: 'kinowe.png',
+      fullName: 'Kinowe Starlight',
+      slug: 'kinowe',
+      str: 16,
+      dex: 12,
+      con: 14,
+      wis: 12,
+      int: 10,
+      cha: 14,
+      luk: 20,
+      level: 10,
+      items: [],
+      attacks: []
+    }
+  ]
+})
