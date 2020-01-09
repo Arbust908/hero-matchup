@@ -8,11 +8,13 @@
     >
       Choose Character
     </nuxt-link>
+    <CharacterSelect />
   </main>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import CharacterSelect from '~/components/CharacterSelect.vue'
 
 export default {
   head() {
@@ -27,7 +29,8 @@ export default {
     }
   },
   components: {
-    Logo
+    Logo,
+    CharacterSelect
   }
 }
 </script>

@@ -45,7 +45,33 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // FA
+    [
+      'nuxt-fontawesome',
+      {
+        component: 'fa',
+        imports: [
+          // import whole set
+          {
+            set: '@fortawesome/pro-solid-svg-icons',
+            icons: ['fas']
+          },
+          {
+            set: '@fortawesome/pro-regular-svg-icons',
+            icons: ['far']
+          },
+          {
+            set: '@fortawesome/pro-light-svg-icons',
+            icons: ['fal']
+          },
+          {
+            set: '@fortawesome/pro-duotone-svg-icons',
+            icons: ['fad']
+          }
+        ]
+      }
+    ]
   ],
   /*
    ** Axios module configuration
