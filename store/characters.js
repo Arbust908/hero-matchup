@@ -15,7 +15,9 @@ export const state = () => ({
       luk: 99,
       level: 10,
       items: [],
-      attacks: []
+      attacks: [],
+      energy: [],
+      defence: 0
     },
     {
       id: 1,
@@ -32,7 +34,9 @@ export const state = () => ({
       luk: 20,
       level: 10,
       items: [],
-      attacks: []
+      attacks: [],
+      energy: [],
+      defence: 0
     },
     {
       id: 2,
@@ -49,7 +53,9 @@ export const state = () => ({
       luk: 99,
       level: 10,
       items: [],
-      attacks: []
+      attacks: [],
+      energy: [],
+      defence: 0
     },
     {
       id: 3,
@@ -66,7 +72,9 @@ export const state = () => ({
       luk: 20,
       level: 10,
       items: [],
-      attacks: []
+      attacks: [],
+      energy: [],
+      defence: 0
     }
   ]
 })

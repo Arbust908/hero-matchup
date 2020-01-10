@@ -1,9 +1,10 @@
 <template>
   <article
-    class="flex p-2 bg-gray-300 rounded hover:shadow-lg hover:bg-gray-400 text-gray-800"
+    :class="isSelectedBox()"
+    class="flex justify-between p-2 rounded hover:shadow-lg text-gray-800 mb-4"
   >
     <img :src="imageSrc" :alt="imageAlt" class="rounded w-16 mr-2" />
-    <div class="flex flex-col justify-between">
+    <div class="flex flex-col justify-between flex-grow">
       <h3>{{ character.fullName }}</h3>
       <StarRating :stars="2.5" class="text-orange-700" />
     </div>
@@ -16,10 +17,10 @@
         />
       </nuxt-link>
       <fa
-        :icon="['far', 'square']"
-        @click=""
+        :icon="isSelectedChar()"
+        @click="toggleChar(character)"
         class="text-3xl hover:text-teal-700"
-        title="Celect"
+        title="Select"
       />
     </div>
   </article>
@@ -65,12 +66,29 @@ export default {
     },
     imageAlt() {
       return `Image of ${this.character.fullName}`
+    },
+    isSelected() {
+      return (
+        this.selectedCharacter &&
+        this.selectedCharacter.name === this.character.name
+      )
     }
   },
   methods: {
-    selectChar(character) {
-      this.$store.state.player = 
-      this.$selectedCharacter = character
+    toggleChar(character) {
+      if (this.selectedCharacter === character) {
+        this.selectedCharacter = null
+      } else {
+        this.selectedCharacter = character
+      }
+    },
+    isSelectedChar() {
+      return this.isSelected ? ['fas', 'check-square'] : ['far', 'square']
+    },
+    isSelectedBox() {
+      return this.isSelected
+        ? 'bg-red-200 hover:bg-red-300'
+        : 'bg-gray-300 hover:bg-gray-400'
     }
   }
 }

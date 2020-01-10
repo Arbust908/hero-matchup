@@ -2,13 +2,19 @@
   <main>
     <Logo />
     <h1 class="text-2xl uppercase underline">Hero Matchup</h1>
+    <section class="m-4">
+      <CharacterSelect
+        v-for="(char, i) in characters"
+        :key="i"
+        :character="char"
+      />
+    </section>
     <nuxt-link
       :to="{ name: 'characters' }"
       class=" px-4 py-2 rounded shadow hover:bg-red-400 hover:text-red-100"
     >
-      Choose Character
+      All Characters
     </nuxt-link>
-    <CharacterSelect />
   </main>
 </template>
 
@@ -31,6 +37,11 @@ export default {
   components: {
     Logo,
     CharacterSelect
+  },
+  computed: {
+    characters() {
+      return this.$store.state.characters.all
+    }
   }
 }
 </script>
