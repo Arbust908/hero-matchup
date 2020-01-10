@@ -2,7 +2,7 @@
   <main>
     <Logo />
     <h1 class="text-2xl uppercase underline">Hero Matchup</h1>
-    <section class="m-4">
+    <section class="my-4">
       <CharacterSelect
         v-for="(char, i) in characters"
         :key="i"

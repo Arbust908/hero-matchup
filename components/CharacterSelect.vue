@@ -1,12 +1,12 @@
 <template>
   <article
     :class="isSelectedBox()"
-    class="flex justify-between p-2 rounded hover:shadow-lg text-gray-800 mb-4"
+    class="flex justify-between p-2 rounded hover:shadow-lg text-gray-800 mb-4 w-64"
   >
     <img :src="imageSrc" :alt="imageAlt" class="rounded w-16 mr-2" />
     <div class="flex flex-col justify-between flex-grow">
-      <h3>{{ character.fullName }}</h3>
-      <StarRating :stars="2.5" class="text-orange-700" />
+      <h3 class="uppercase">{{ character.name }}</h3>
+      <StarRating :stars="character.ranking" class="text-orange-700" />
     </div>
     <div class="flex flex-col ml-4 justify-around">
       <nuxt-link :to="`/characters/${character.slug}`">
@@ -50,7 +50,8 @@ export default {
           luk: 99,
           level: 10,
           items: [],
-          attacks: []
+          attacks: [],
+          ranking: 2.5
         }
       }
     }

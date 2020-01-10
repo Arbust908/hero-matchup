@@ -17,7 +17,8 @@ export const state = () => ({
       items: [],
       attacks: [],
       energy: [],
-      defence: 0
+      defence: 0,
+      ranking: 4.5
     },
     {
       id: 1,
@@ -36,7 +37,8 @@ export const state = () => ({
       items: [],
       attacks: [],
       energy: [],
-      defence: 0
+      defence: 0,
+      ranking: 3
     },
     {
       id: 2,
@@ -55,7 +57,8 @@ export const state = () => ({
       items: [],
       attacks: [],
       energy: [],
-      defence: 0
+      defence: 0,
+      ranking: 2
     },
     {
       id: 3,
@@ -74,7 +77,8 @@ export const state = () => ({
       items: [],
       attacks: [],
       energy: [],
-      defence: 0
+      defence: 0,
+      ranking: 1
     }
   ]
 })

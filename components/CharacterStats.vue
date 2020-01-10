@@ -1,9 +1,9 @@
 <template>
   <section>
-    <img
-      :src="characterImg"
-      :alt="imageAlt"
-      class="w-20 h-20 object-cover shadow rounded-lg m-4 p-1"
+    <CharacterImg
+      :sorce="character.img"
+      :description="character.fullName"
+      class="m-4"
     />
     <h2>{{ character.fullName }}</h2>
     <h4>hp {{ currentHp }} / {{ maxHp }}</h4>
@@ -19,7 +19,11 @@
   </section>
 </template>
 <script>
+import CharacterImg from '~/components/CharacterImg.vue'
 export default {
+  components: {
+    CharacterImg
+  },
   props: {
     character: {
       type: Object,
@@ -55,12 +59,6 @@ export default {
     },
     currentHp() {
       return this.maxHp - this.damage
-    },
-    characterImg() {
-      return require(`~/assets/img/characters/${this.character.img}`)
-    },
-    imageAlt() {
-      return `Image of ${this.character.fullName}`
     }
   }
 }
