@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     characters() {
-      return this.$store.state.characters.all
+      return this.$store.getters.characters.getCharacters
     }
   }
 }

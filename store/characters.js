@@ -82,3 +82,13 @@ export const state = () => ({
     }
   ]
 })
+
+export const getters = () => ({
+  getChatacters(state) {
+    return state.all
+  }
+})
+
+export const mutations = {}
+
+export const actions = () => ({})
