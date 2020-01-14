@@ -4,7 +4,7 @@
     <CharacterStats :character="character" />
     <ul class="flex w-11/12 bg-gray-200 p-8 rounded-lg my-6 mx-auto">
       <li
-        v-for="pc in characters"
+        v-for="pc in otherCharacters"
         :key="pc.id"
         class="rounded shadow bg-white mx-2 mb-2 px-4 py-2 hover:bg-red-400 hover:text-red-100"
       >
@@ -18,6 +18,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import CharacterStats from '~/components/CharacterStats'
 import CharacterImg from '~/components/CharacterImg'
 export default {
@@ -36,15 +37,16 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('characters', [
+      'getCharacters',
+      'getCharacter',
+      'getCharactersExept'
+    ]),
     character() {
-      return this.$store.state.characters.all.find(
-        (char) => char.slug === this.name
-      )
+      return this.getCharacter(this.name)
     },
-    characters() {
-      return this.$store.state.characters.all.filter(
-        (char) => char.slug !== this.name
-      )
+    otherCharacters() {
+      return this.getCharactersExept(this.name)
     }
   }
 }

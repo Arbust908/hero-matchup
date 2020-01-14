@@ -1,25 +1,38 @@
 <template>
-  <main>
-    <Logo />
-    <h1 class="text-2xl uppercase underline">Hero Matchup</h1>
-    <section class="my-4">
-      <CharacterSelect
-        v-for="(char, i) in characters"
-        :key="i"
-        :character="char"
+  <main class="flex flex-col items-center">
+    <h1 class="text-2xl uppercase underline mb-4">Hero Matchup</h1>
+    <article class="pb-4 flex flex-col">
+      <label for="playerName" class="text-left">Player Name</label>
+      <input
+        v-model="playerName"
+        @input="setName()"
+        type="text"
+        name="playerName"
+        placeholder="YourName"
+        class="border-b border-gray-600"
       />
-    </section>
+    </article>
     <nuxt-link
+      v-show="getPC"
+      to="/start"
+      class="px-4 py-2 rounded shadow hover:bg-red-400 hover:text-red-100"
+    >
+      Let's Start {{ playerName }}
+    </nuxt-link>
+    <section class="my-4">
+      <CharacterSelect />
+    </section>
+    <!-- <nuxt-link
       :to="{ name: 'characters' }"
       class=" px-4 py-2 rounded shadow hover:bg-red-400 hover:text-red-100"
     >
       All Characters
-    </nuxt-link>
+    </nuxt-link> -->
   </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { mapGetters, mapActions } from 'vuex'
 import CharacterSelect from '~/components/CharacterSelect.vue'
 
 export default {
@@ -35,12 +48,25 @@ export default {
     }
   },
   components: {
-    Logo,
     CharacterSelect
   },
+  data() {
+    return {
+      playerName: 'Guest'
+    }
+  },
   computed: {
-    characters() {
-      return this.$store.getters.characters.getCharacters
+    ...mapGetters('player', ['getPC', 'getPlayerName'])
+  },
+  created() {
+    this.playerName = this.getPlayerName
+  },
+  methods: {
+    ...mapActions('player', ['setPlayerName']),
+    setName() {
+      if (this.playerName !== 'Guest') {
+        this.setPlayerName(this.playerName)
+      }
     }
   }
 }

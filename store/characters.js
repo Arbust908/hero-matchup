@@ -83,12 +83,22 @@ export const state = () => ({
   ]
 })
 
-export const getters = () => ({
-  getChatacters(state) {
+export const getters = {
+  getCharacters(state) {
     return state.all
-  }
-})
+  },
+  // getCharacter(state, slug) {
+  //   return state.all.find((char) => char.slug === slug)
+  // },
+  getCharacter: (state) => (slug) =>
+    state.all.find((char) => char.slug === slug),
+  // getCharactersExept(state, slug) {
+  //   return state.all.filter((char) => char.slug === slug)
+  // }
+  getCharactersExept: (state) => (slug) =>
+    state.all.filter((char) => char.slug !== slug)
+}
 
 export const mutations = {}
 
-export const actions = () => ({})
+export const actions = {}

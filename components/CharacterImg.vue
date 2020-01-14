@@ -3,7 +3,7 @@
     <img
       :src="imageSrc"
       :alt="imageAlt"
-      class="w-16 h-16 object-cover shadow rounded-lg p-1"
+      class="w-16 h-16 object-cover shadow rounded-lg p-1 bg-gray-100"
     />
   </div>
 </template>
