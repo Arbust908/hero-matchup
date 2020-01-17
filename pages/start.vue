@@ -3,15 +3,39 @@
     <CombatCard :playerName="getPlayerName" :isPlayer="true" :char="getPC" />
     <CombatCard :char="getRandomCharacter" player-name="Enemy" />
     <section class="w-full flex flex-wrap justify-between px-4">
-      <article class="w-3/12 h-16 bg-gray-400"></article>
-      <article class="w-3/12 h-16 bg-gray-400"></article>
-      <article class="w-3/12 h-16 bg-gray-400"></article>
-      <article class="w-2/12 h-16 bg-gray-400"></article>
+      <article
+        class="w-3/12 h-16 bg-gray-400 text-teal-700 mt-2 text-3xl flex justify-center items-center hover:bg-teal-800 hover:text-gray-200 hover:shadow"
+      >
+        <fa :icon="['fad', 'swords']" />
+      </article>
+      <article
+        class="w-3/12 h-16 bg-gray-400 text-teal-700 mt-2 text-3xl flex justify-center items-center hover:bg-teal-800 hover:text-gray-200 hover:shadow"
+      >
+        <fa :icon="['fad', 'shield']" />
+      </article>
+      <article
+        class="w-3/12 h-16 bg-gray-400 text-teal-700 mt-2 text-3xl flex justify-center items-center hover:bg-teal-800 hover:text-gray-200 hover:shadow"
+      >
+        <fa :icon="['fad', 'heart']" />
+      </article>
+      <article class="w-2/12 h-16 bg-gray-400 text-teal-700 mt-2"></article>
 
-      <article class="w-3/12 h-16 bg-gray-400 mt-2"></article>
-      <article class="w-3/12 h-16 bg-gray-400 mt-2"></article>
-      <article class="w-3/12 h-16 bg-gray-400 mt-2"></article>
-      <article class="w-2/12 h-16 bg-gray-400 mt-2"></article>
+      <article
+        class="w-3/12 h-16 bg-gray-400 text-teal-700 mt-2 text-3xl flex justify-center items-center hover:bg-teal-800 hover:text-gray-200 hover:shadow"
+      >
+        <fa :icon="['fad', 'book-spells']" />
+      </article>
+      <article
+        class="w-3/12 h-16 bg-gray-400 text-teal-700 mt-2 text-3xl flex justify-center items-center hover:bg-teal-800 hover:text-gray-200 hover:shadow"
+      >
+        <fa :icon="['fad', 'sparkles']" />
+      </article>
+      <article
+        class="w-3/12 h-16 bg-gray-400 text-teal-700 mt-2 text-3xl flex justify-center items-center hover:bg-teal-800 hover:text-gray-200 hover:shadow"
+      >
+        <fa :icon="['fad', 'treasure-chest']" />
+      </article>
+      <article class="w-2/12 h-16 bg-gray-400 text-teal-700 mt-2"></article>
     </section>
     <section class="w-full">
       <ul>
