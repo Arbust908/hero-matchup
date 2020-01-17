@@ -44,12 +44,22 @@ export const mutations = {
       state.character = JSON.parse(localStorage.getItem('SAVEGAME_char'))
       state.character = JSON.parse(localStorage.getItem('SAVEGAME_lastSave'))
     }
+  },
+  INIT_HEALTH(state) {
+    if (state.character != null) {
+      state.character.maxHealth = state.character.con * state.character.level
+      state.character.currentHealth = state.character.maxHealth
+    }
+  },
+  TAKE_DAMEGE(state, payload) {
+    state.character.currentHealth = state.character.currentHealth - payload
   }
 }
 
 export const actions = {
   selectChar(context, payload) {
     context.commit('SELECT_CHAR', payload)
+    context.commit('INIT_HEALTH')
   },
   deselectChar(context) {
     context.commit('DESELECT_CHAR')

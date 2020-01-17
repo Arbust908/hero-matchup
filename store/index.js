@@ -8,3 +8,11 @@ export const state = () => ({
 })
 
 export const getters = {}
+
+export const mutations = {}
+
+export const actions = {
+  executeAction(context, payload) {
+    context.commit('player/TAKEDAMAGE', payload)
+  }
+}

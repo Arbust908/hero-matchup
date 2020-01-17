@@ -18,7 +18,9 @@ export const state = () => ({
       attacks: [],
       energy: [],
       defence: 0,
-      ranking: 4.5
+      ranking: 4.5,
+      maxHealth: 0,
+      currentHealth: 0
     },
     {
       id: 1,
@@ -38,7 +40,9 @@ export const state = () => ({
       attacks: [],
       energy: [],
       defence: 0,
-      ranking: 3
+      ranking: 3,
+      maxHealth: 0,
+      currentHealth: 0
     },
     {
       id: 2,
@@ -58,7 +62,9 @@ export const state = () => ({
       attacks: [],
       energy: [],
       defence: 0,
-      ranking: 2
+      ranking: 2,
+      maxHealth: 0,
+      currentHealth: 0
     },
     {
       id: 3,
@@ -78,7 +84,9 @@ export const state = () => ({
       attacks: [],
       energy: [],
       defence: 0,
-      ranking: 1
+      ranking: 1,
+      maxHealth: 0,
+      currentHealth: 0
     }
   ]
 })
@@ -99,7 +107,6 @@ export const getters = {
     state.all.filter((char) => char.slug !== slug),
   getRandomCharacter(state) {
     const rand = Math.floor(Math.random() * (state.all.length - 1)) + 0
-    console.log(state.all[rand])
     return state.all[rand]
   }
 }
