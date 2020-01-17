@@ -96,7 +96,12 @@ export const getters = {
   //   return state.all.filter((char) => char.slug === slug)
   // }
   getCharactersExept: (state) => (slug) =>
-    state.all.filter((char) => char.slug !== slug)
+    state.all.filter((char) => char.slug !== slug),
+  getRandomCharacter(state) {
+    const rand = Math.floor(Math.random() * (state.all.length - 1)) + 0
+    console.log(state.all[rand])
+    return state.all[rand]
+  }
 }
 
 export const mutations = {}

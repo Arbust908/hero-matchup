@@ -1,30 +1,35 @@
 <template>
   <main class="flex flex-wrap">
-    <section class="w-1/2 bg-green-300 p-2">
-      <h2 class="gray-400 text-sm">{{ getPlayerName }}</h2>
-      <article class="flex flex-col justify-center">
-        <CharacterImg
-          :sorce="getPC.img"
-          :description="getPC.fullName"
-          class="flex justify-center pb-4"
-        />
-        <h3 class="text-center leading-none">{{ getPC.fullName }}</h3>
-      </article>
+    <CombatCard :playerName="getPlayerName" :isPlayer="true" :char="getPC" />
+    <CombatCard :char="getRandomCharacter" player-name="Enemy" />
+    <section class="w-full flex flex-wrap justify-between px-4">
+      <article class="w-3/12 h-16 bg-gray-400"></article>
+      <article class="w-3/12 h-16 bg-gray-400"></article>
+      <article class="w-3/12 h-16 bg-gray-400"></article>
+      <article class="w-2/12 h-16 bg-gray-400"></article>
+
+      <article class="w-3/12 h-16 bg-gray-400 mt-2"></article>
+      <article class="w-3/12 h-16 bg-gray-400 mt-2"></article>
+      <article class="w-3/12 h-16 bg-gray-400 mt-2"></article>
+      <article class="w-2/12 h-16 bg-gray-400 mt-2"></article>
     </section>
-    <section class="w-1/2 bg-red-300">
-      <h2>Enemy</h2>
+    <section class="w-full">
+      <ul>
+        <li>Combat Starts</li>
+      </ul>
     </section>
   </main>
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import CharacterImg from '~/components/CharacterImg'
+import CombatCard from '~/components/CombatCard'
 export default {
   components: {
-    CharacterImg
+    CombatCard
   },
   computed: {
-    ...mapGetters('player', ['getPC', 'getPlayerName'])
+    ...mapGetters('player', ['getPC', 'getPlayerName']),
+    ...mapGetters('characters', ['getRandomCharacter'])
   },
   methods: {
     ...mapActions('player', ['setPlayerName'])
